@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
 {% block body %}
+  <style>
+body { background-color:#cbcbb3; }
+
+  </style>
+
 
 {# /post/{{ post.id }} #}
 
@@ -9,7 +14,7 @@
     <div class="container">
         {% for post in posts %}
             <div class="row">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-7 col-md-offset-2">
                     <div class="thumbnail">
         {#                <img src="..." alt="...">#}
                         <div class="caption">
@@ -17,9 +22,10 @@
                               <img src="{{ post.image.url}}" class="img-responsive">
                             {% endif %}
                             <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a> <small>{{ post.publishing_date|timesince }}</small></h3>
+                            <h4>Yazar: {{ post.user.get_full_name }}</h4>
                             <p>{{ post.question_Content|linebreaks|truncatechars:150 }}</p>
                             <p>
-                                <a href="{{ post.get_absolute_url }}" class="btn btn-primary" role="button">İncele</a>
+                                <a href="{{ post.get_absolute_url }}" class="btn btn-primary" role="button">Yorum yap</a>
                                 <a href="{{ post.get_update_url }}" class="btn btn-default" role="button">Güncelle</a>
                                 <a href="{{ post.get_delete_url }}" class="btn btn-danger" role="button">Sil</a>
                             </p>

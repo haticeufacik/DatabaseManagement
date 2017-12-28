@@ -3,5 +3,80 @@
 {% block title %} Anasayfa - {{ block.super}} {% endblock %}
 
 {% block body %}
- Hoşgeldin {{ isim }}
+  <style>
+  body
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  h1 {
+ font-family: Arial, sans-serif;
+ font-size: 24px;
+ color: #555555;
+}
+  .bg-1 {
+      background-color: #1abc9c; /* Green */
+      color: #ffffff;
+  }
+  .bg-2 {
+      background-color: #474e5d; /* Dark Blue */
+      color: #ffffff;
+  }
+  .bg-3 {
+      background-color: #ffffff; /* White */
+      color: #555555;
+  }
+  .bg-4 {
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+  }
+  .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+  </style>
+</head>
+<body>
+  <div class=" text-center">
+    <h2 class="margin">QUORA.COM'A HOŞ GELDİNİZ!</h2></div>
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <img src="static/images/ana1.jpg" class="img-responsive img-circle margin" style="display:inline" alt="ana1" width="350" height="350">
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <h3 class="margin">Neden Quora ?</h3>
+  <p> Onlarca çeþitli sitenin arasýnda neden Quora?</p>
+  <p>Günümüzde kafamızdaki çeşitli soruların cevaplarını bulmak için farklı sitelerden yardım almaya çalışarak ve hangisine güveneceğimiz konusunda karamsarlıklar yaşayarak zaman harcıyoruz. Bu sitenin yapılmasındaki temel amaçta tam olarak bu. Çeşitli sitelerden yardım almaya çalışarak, hangisine güvenmeliyim, acaba cevap veren olmayacak mı gibi soru işaretlerini ortadan kaldırarak tek bir ortamdan istenilen soruların cevaplarına erişmenizi sağlamak hedefimiz.Siz kafanızdaki sorular ne olursa olsun sorun ve o konu ile ilgili, meraklı,bilgisi olan kişiler size yardımcı olsun.</p></div>
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">
+  <h3 class="margin">Biz Kimiz?</h3><br>
+  <p>Biz 3 masum üniversite öğrencisiyiz. Karadeniz Teknik Üniversitesini kazandıklarından bu yana yüzleri gülmeyen 3 garip kızcağızız. Yüzümüzün gülmemesinin sebebini de öyle kötü anlamayın. Okulumuzun verdiği eğitimin hakkını vermeye çalışıyoruz. Başlarda of çok zor diye bir çok kez demiş olsakta en güzel iyikilerimizi de burada söyledik defalarca. İyi ki KTÜ..</p>
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Büsra TÜRKCAN</p>
+      <img src="static/images/bus.jpg" class="img-responsive margin" style="width:100%" alt="artsgge">
+    </div>
+    <div class="col-sm-4">
+      <p>Fatma AKAY</p>
+      <img src="static/images/fate.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4">
+      <p>Hatice UFACIK</p>
+      <img src="static/images/hatice.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>~ Büsra Türkcan-Fatma AKAY-Hatice UFACIK ~</p>
+</footer>
+
+</body>
+</html>
+
+
+
+
 {% endblock %}

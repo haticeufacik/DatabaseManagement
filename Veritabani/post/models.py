@@ -6,6 +6,7 @@ from django.urls import reverse
 
 class Post(models.Model):
     # id = models.AutoField(primary_key=True)
+    user = models.ForeignKey('auth.User', verbose_name='Yazar', related_name='posts')
     title = models.CharField(max_length=120, verbose_name="Başlık")
     question_Content = models.TextField(verbose_name="Soru İçeriği")
     publishing_date = models.DateTimeField(verbose_name="Yayımlanma Tarihi", auto_now_add=True)
@@ -29,3 +30,14 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-publishing_date', 'id']
+
+
+class Comment(models.Model):
+    post = models.ForeignKey('post.Post', on_delete=models.CASCADE, related_name='comments')
+    name = models.CharField(max_length=200, verbose_name='Ad Soyad')
+    content = models.TextField(verbose_name='Yorum')
+
+    created_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
