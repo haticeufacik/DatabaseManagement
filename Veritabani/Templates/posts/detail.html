@@ -18,7 +18,7 @@ body { background-color:#cbcbb3; }
                         <h4>Yazar: {{ post.user.get_full_name }}</h4>
                         <p>{{ post.question_Content|linebreaks}}</p>
                         <p>
-                            <a href="{{ post.get_absolute_url }}" class="btn btn-primary" role="button">Yorum Yap</a>
+                            <a href="{{ post.get_absolute_url }}" class="btn btn-primary" role="button">Cevapla</a>
                             {% if request.user.is_authenticated %}
                             <a href="{{ post.get_update_url }}" class="btn btn-default" role="button">Güncelle</a>
                             <a href="{{ post.get_delete_url }}" class="btn btn-danger" role="button">Sil</a>
@@ -28,11 +28,11 @@ body { background-color:#cbcbb3; }
                 </div>
 
                 <br><br><hr>
-               <h3>Yorum Ekle:</h3>
+               <h3>Cevapla:</h3>
                {% include 'posts/comment.html' %}
                <hr/>
 
-               <h3>Yorumlar:</h3>
+               <h3>Cevaplar:</h3>
                {% for comment in post.comments.all %}
                    <h4>{{ comment.name }} | <small>{{ comment.created_date|timesince }} önce </small></h4>
                    <p>{{ comment.content|linebreaks }}</p>

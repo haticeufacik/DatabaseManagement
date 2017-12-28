@@ -25,7 +25,7 @@ body { background-color:#cbcbb3; }
                             <h4>Yazar: {{ post.user.get_full_name }}</h4>
                             <p>{{ post.question_Content|linebreaks|truncatechars:150 }}</p>
                             <p>
-                                <a href="{{ post.get_absolute_url }}" class="btn btn-primary" role="button">Yorum yap</a>
+                                <a href="{{ post.get_absolute_url }}" class="btn btn-primary" role="button">Cevapla</a>
                                 <a href="{{ post.get_update_url }}" class="btn btn-default" role="button">Güncelle</a>
                                 <a href="{{ post.get_delete_url }}" class="btn btn-danger" role="button">Sil</a>
                             </p>
@@ -34,6 +34,30 @@ body { background-color:#cbcbb3; }
                 </div>
             </div>
         {% endfor %}
+
+        <div class="row">
+           <div class="col-md-7 col-md-offset-2">
+               <div class="pagination">
+                   <span class="step-links">
+                       {% if posts.has_previous %}
+                           <a href="?page={{ posts.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">Previous</a>
+                       {% endif %}
+
+                       <span class="current">
+                           Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+                       </span>
+
+                       {% if posts.has_next %}
+                           <a href="?page={{ posts.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">Next</a>
+                       {% endif %}
+                   </span>
+               </div>
+           </div>
+       </div>
+
+   </div>
+
+
     </div>
 
 
